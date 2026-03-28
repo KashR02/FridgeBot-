@@ -25,6 +25,11 @@ jobs:
 
       - name: Write Google credentials
         run: echo '${{ secrets.GOOGLE_CREDS_JSON }}' > google_creds.json
+        
+      - name: Check secrets
+        run: |
+          echo "GEMINI_API_KEY is set: ${{ secrets.GEMINI_API_KEY != '' }}"
+          echo "SHEET_NAME is set: ${{ secrets.SHEET_NAME != '' }}"
 
       - name: Run reminder
         env:
