@@ -1,0 +1,33 @@
+name: Daily Fridge Reminder
+
+on:
+  schedule:
+    - cron: "30 2 * * *"   # 8:00 AM IST = 2:30 AM UTC
+  workflow_dispatch:         # allows manual trigger from GitHub
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write Google credentials
+        run: echo '${{ secrets.GOOGLE_CREDS_JSON }}' > google_creds.json
+
+      - name: Run reminder
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_WHATSAPP_FROM: ${{ secrets.TWILIO_WHATSAPP_FROM }}
+          YOUR_PHONE_NUMBER: ${{ secrets.YOUR_PHONE_NUMBER }}
+          SHEET_NAME: ${{ secrets.SHEET_NAME }}
+        run: python remind1.py
