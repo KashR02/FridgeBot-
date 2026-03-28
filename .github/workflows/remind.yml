@@ -17,7 +17,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements1.txt
 
       - name: Write Google credentials
         run: echo '${{ secrets.GOOGLE_CREDS_JSON }}' > google_creds.json
@@ -31,3 +31,4 @@ jobs:
           YOUR_PHONE_NUMBER: ${{ secrets.YOUR_PHONE_NUMBER }}
           SHEET_NAME: ${{ secrets.SHEET_NAME }}
         run: python remind1.py
+        
