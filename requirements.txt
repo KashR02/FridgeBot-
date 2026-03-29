@@ -1,6 +1,0 @@
-flask
-twilio
-google-generativeai
-gspread
-google-auth
-python-dotenv

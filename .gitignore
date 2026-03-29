@@ -5,3 +5,5 @@ __pycache__/
 app1.py 
 app.py
 remind.py 
+requirements.txt
+agent.py
