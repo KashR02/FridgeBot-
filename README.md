@@ -40,13 +40,13 @@ remind1.py → Gemini AI → Twilio → WhatsApp → You
 
 ## How the AI Agent works
 The agent has 7 tools:
-- `add_items` — saves groceries to Google Sheets
-- `delete_item` — removes an item when used
-- `get_all_items` — lists everything in the fridge
-- `get_expiring_soon` — checks what expires in 7 days
-- `save_preference` — remembers your cooking habits
-- `get_preferences` — reads your saved preferences
-- `suggest_meals` — generates personalised meal plans
+- add_items — saves groceries to Google Sheets
+- delete_item — removes an item when used
+- get_all_items — lists everything in the fridge
+- get_expiring_soon — checks what expires in 7 days
+- save_preference — remembers your cooking habits
+- get_preferences — reads your saved preferences
+- suggest_meals — generates personalised meal plans
 
 
 
