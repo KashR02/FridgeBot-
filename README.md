@@ -2,7 +2,7 @@
 
 An AI agent that helps track grocery expiry dates and plan meals — all via WhatsApp.
 
-## What it does
+# What it does
 - Add groceries
 - Smart reminders
 - Delete items
@@ -12,7 +12,7 @@ An AI agent that helps track grocery expiry dates and plan meals — all via Wha
 - New recipe ideas
 
 
-## Architecture
+# Architecture
 You (WhatsApp)
      ↓
 Twilio (WhatsApp bridge)
@@ -30,15 +30,15 @@ Daily 8am (GitHub Actions)
 remind1.py → Gemini AI → Twilio → WhatsApp → You
 ```
 
-## Tech Stack
-| Python + Flask 
-| Google Gemini API
-| Twilio 
-| Google Sheets 
-| GitHub Actions
+# Tech Stack
+ Python + Flask 
+ Google Gemini API
+ Twilio 
+ Google Sheets 
+ GitHub Actions
 
 
-## How the AI Agent works
+# How the AI Agent works
 The agent has 7 tools:
 - add_items — saves groceries to Google Sheets
 - delete_item — removes an item when used
